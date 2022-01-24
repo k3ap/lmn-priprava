@@ -1,0 +1,19 @@
+#+TITLE: Kvantifikatorja in logika prvega reda
+#+AUTHOR: Patrik Žnidaršič
+
+* Kvantifikatorja
+
+Poznamo dva kvantifikatorja:
+- univerzalni kvantifikator: =∀ x ∈ A. ϕ(x)= pomeni, da za vse elemente v množici =A= velja =ϕ=
+- eksistenčni kvantifikator: =∃ x ∈ A. ϕ(x)= pomeni, da obstaja (eden ali več) element(ov) v množici =A=, za katerega(ih) velja =ϕ=
+  
+Kvantifikatorja imata zelo nizko prioriteto, kar pomeni, da pod njiju spada vse, kar je od njiju desno. Kadar želimo pri kvantifikaciji izraziti dodatni pogoj (/obstaja/za vsako liho število, .../), to storimo malce drugače pri obeh kvantifikatorjih:
+- za kvantifikator =∃= dodatni pogoj združimo z osnovnim z uporabo konjunkcije
+- za kvantifikator =∀= dodatni pogoj združimo z osnovnim z uporabo implikacije
+  
+V zapisu kvantifikatorja smo uporabili vezano spremenljivko (torej, ni prosta); ta spremenljivka obstaja samo v kvantifikatorju in trditvi, ki mu sledi. Spremenljivke ne smemo uporabiti zunaj kvantifikatorja, prav tako se ne spodobi uporabljati že deklarirane spremenljivke v kvantifikatorju.
+
+V posebnem primeru velja =∀ x ∈ ∅. ϕ(x)= in ne velja =∃ x ∈ ∅. ϕ(x)=.
+Če je množica =A = {a}= enojec, sta izjavi =∀ x ∈ A. ϕ(x)= ter =∃ x ∈ A. ϕ(x)= ekvivalentni izjavi =ϕ(a)=.
+
+Kvantifikator se negira tako, da ga zamenjamo z drugim in negacijo "potisnemo" vanj.

@@ -1,0 +1,27 @@
+#+TITLE: Dokazovanje izjav
+#+AUTHOR: Patrik Žnidaršič
+
+* Pravila dokazovanja
+
+Dokaz je matematični objekt, kjer z uporabo različnih pravil sklepanja iz predpostavk izpeljemo željeno trditev. Ima drevesno strukturo, kjer na vsaki točki v dokazu poznamo trenutne predpostavke in znane spremenljivke (/kontekst/) in cilj. Kadar pišemo dokaz dejansko konstruiramo objekt, ki bo utemeljil željeno trditev.
+
+ Pri pisanju dokaza se sklicujemo na pravila sklepanja, ki spadajo v eno od dveh kategorij:
+- pravila uporabe
+- pravila vpeljave
+
+Pravila uporabe povedo, kako razvijemo predpostavke v obliko, ki jo lahko potem uporabimo v dokazu.
+Pravila vpeljave povedo, kaj moramo storiti, da dokažemo trenutni cilj.
+
+Poznamo pravilo uporabe in pravilo vpeljave za vse znane logične veznike, in za oba kvantifikatorja. Poleg teh pa poznamo še dve pravili zamenjave:
+- zakon o zamenjavi enakih elementov: če velja =A = B=, lahko =A= zamenjamo z =B= in obratno.
+- zakon o zamenjavi ekvivalentnih izjav: če velja =A ⇔ B=, lahko =A= zamenjamo z =B= in obratno.
+  
+* Izključena tretja možnost
+
+Recimo, da želimo dokazati =p=. Po zakonu o izključeni tretji možnosti mora veljati =q ∨ ¬q=. Obravnavamo lahko torej dve možnosti:
+- če velja =q=, ...
+- če velja =¬q=, ...
+  
+* Dokaz s protislovjem
+
+Če želimo dokazati =p=, lahko to storimo tako, da predpostavimo =¬p= in dokažemo neresnico; to je ekvivalentno dokazu =p= (pravilo vpeljave za neresnico je iskanje protislovja).

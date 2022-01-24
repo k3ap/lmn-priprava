@@ -1,0 +1,26 @@
+#+TITLE: Definicije in enolični opis
+#+AUTHOR: Patrik Žnidaršič
+
+* Definicije
+
+Definicije so pravzaprav okrajšave za različne izraze. Kadar zapišemo /f je zvezna v točki a, če .../, in za funkcijo =f(x) = x²= trdimo, da je zvezna v točki =0=, tedaj dejansko mislimo reči, da za =f= velja =∀ ϵ ∈ ℝ. ϵ > 0 ⇒ ∃ δ ∈ ℝ. δ > 0 ∧ ∀ x ∈ D_f. |x-0| < δ ⇒ |f(x) - f(0)| < ϵ=.
+
+Definicijo lahko zapišemo tudi matematično, brez uporabe govorjenega jezika:
+#+begin_example
+zvezna(f,a) := ∀ ϵ ∈ ℝ. ϵ > 0 ⇒ ∃ δ ∈ ℝ. δ > 0 ∧ ∀ x ∈ D_f. |x-a| < δ ⇒ |f(x) - f(a)| < ϵ
+#+end_example
+tedaj je =zvezna= samo simbol, kot je tudi =f= simbol; pri interpretaciji izraza =zvezna(x ↦ x², 0)= prvo zamenjamo ta simbol, kot piše v definiciji.
+
+* Enoličen obstoj in enoličen opis
+  
+Pogosto uporabljena okrajšava je =∃!x ∈ A. ϕ(x)=. Imenuje se /kvantifikator enoličnega obstoja/, ni pa nič drugega kot =∃ x ∈ A. ϕ(x) ∧ ∀ y ∈ A. ϕ(y) ⇒ x = y=.
+
+Kadar vemo, da velja =∃!x ∈ A. ϕ(x)=, lahko uporabimo operator enoličnega opisa, ki ga zapišemo podobno kot kvantifikator enoličnega obstoja:
+                                =ɩ x ∈ A. ϕ(x)=
+To preberemo /tisti x iz A, za katerega velja ϕ/. Ker vemo, da obstaja tak, in da je s pogojem enolično določen, ga lahko uporabljamo v prihodnje. Tedaj ga lahko uvedemo kot novo spremenljivko =đ= z dejstvom =ϕ(đ)=.
+
+Če je =E= točno določen element množice =A=, potem seveda velja =∃! x ∈ A. x = E=. V tem primeru smemo uvesti novo spremenljivko, ki ji nastavimo vrednost =E=. Če uvajamo funkcijo, to zapišemo =f(x) = ...=.
+
+* Uvajanje prostih spremenljivk
+
+Videli smo že, kako uvesti novo spremenljivko kot okrajšavo za nek izraz. Možna pa je še drugačna vpeljava simbola, kot prosto spremenljivko; ta predstavlja neznan element neke množice. To storimo tako, da napišemo /Naj bo x ∈ A/.

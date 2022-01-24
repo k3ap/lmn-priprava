@@ -1,0 +1,102 @@
+#+TITLE: Izomorfizmi
+#+AUTHOR: Patrik Žnidaršič
+
+* Inverz funkcije
+
+Naj bo =f: A → B= funkcija. Če obstaja funkcija =g: B → A=, da velja =f ∘ g = id_B= in =g ∘ f = id_A=, potem pravimo, da je =g= /inverz/ funkcije =f=.
+
+Če ima neka funkcija dva inverza, potem sta enaka;
+predpostavimo, da sta =g= in =h= inverza funkcije =f: A → B=. Torej;
+#+begin_example
+g = g ∘ id_B = g ∘ (f ∘ h) = (g ∘ f) ∘ h = id_A ∘ h = h
+#+end_example
+
+Ker je inverz unikaten, če obstaja, je zapis =f⁻¹= zanj smiselen.
+
+* Izomorfizmi
+
+Preslikava je /izomorfizem/, kadar ima inverz. Če obstaja izomorfizem med množicama =A= in =B=, pravimo, da sta /izomorfni/, in pišemo =A ≅ B=.
+
+Če sta funkciji =f: A → B= in =g: B → C= izomorfizma, potem je tudi =g ∘ f= izomorfizem. Velja =(g∘f)⁻¹ = f⁻¹ ∘ g⁻¹=
+
+#+begin_example
+(g ∘ f) ∘ (f⁻¹ ∘ g⁻¹)
+= g ∘ (f ∘ f⁻¹) ∘ g⁻¹
+= g ∘ id_B ∘ g⁻¹
+= g ∘ g⁻¹
+= id_C
+#+end_example
+
+#+begin_example
+(f⁻¹ ∘ g⁻¹) ∘ (g ∘ f)
+= f⁻¹ ∘ id_B ∘ f
+= id_A
+#+end_example
+
+Relacija =≅= na množicah je refleksivna, simetrična in tranzitivna;
+- refleksivnost: =id_A= je izomorfizem =A → A=
+- simetričnost: če imamo izomorfizem =A → B=, je njegov inverz izomorfizem =B → A=
+- tranzitivnost: kompozitum izomorfizmov je izomorfizem
+
+** Povezava z bijekcijami
+   
+Preslikava =f : A → B= je izomorfizem natanko tedaj, ko je bijektivna.
+
+*** Dokaz
+
+Dokažimo najprej impliakcijo v desno smer. Predpostavimo, da je =f= izomorfizem. Tedaj ima inverz =g : B → A=.
+
+Dokažimo, da je =f= surjektivna: Naj bo =y ∈ B=. Tedaj velja =f(g(y)) = y=, ker je =g= desni inverz f.
+Dokažimo, da je =f= injektivna: Naj bosta =x,y ∈ A=. Predpostavimo =f(x) = f(y)=. Tedaj velja =g(f(x)) = g(f(y))=, oziroma (ker je =g= levi inverz =f=) =x = y=.
+
+Dokažimo še implikacijo v levo smer. Predpostavimo, da je =f= bijektivna in poiščimo inverz.
+Ker je =f= bijektivna, velja =∀ y ∈ B. ∃!x ∈ A. f(x) = y=. Definiramo =g= z naslednjim predpisom:
+
+                           =g(y) = ɩx ∈ A. f(x) = y=
+                           
+Preverimo, da je =g= res inverz =f=:
+#+begin_example
+                                 (g∘f)(a)
+                               = g(f(a))
+                               = ɩx ∈ A. f(x) = f(a)
+                               = a
+#+end_example
+
+#+begin_example
+                                 (f∘g)(b)
+                               = f(g(b))
+                               = f(ɩx ∈ A. f(x) = b)
+                               = b
+#+end_example
+
+* Aritmetika množic
+  (glej [[./02_osnovne_konstrukcije_mnozic.org]])
+
+* Izomorfnost potenčne množice in množice karakterističnih preslikav
+  
+Karakteristična preslikava množice =A= je množica =2^A=, katere elementi so karakteristične preslikave (funkcije z domeno =A= in kodomeno =2=).
+
+Potenčna množica =P(A)= je množica, katere elementi so podmnožice =A=; množica =B= je podmnožica =A= natanko tedaj, ko velja =∀x ∈ B. x ∈ A=.
+
+Dokažimo =P(A) ≅ 2^A=.
+
+Podati moramo izomorfizem =f: P(A) → 2^A=. Podamo ga s predpisom:
+
+                               =B ↦ (x ↦ x ∈ B)=
+                             
+Preverimo, da je to res izomorfizem; vemo, da je to natanko tedaj, ko je bijekcija.
+
+Dokažimo, da je surjekcija: Naj bo =g: A → 2= funkcija. Preverimo, da velja =f({x ∈ A | g(x)}) = g=:
+Naj bo =x ∈ A=. Dokazati moramo =g(x) = f({x ∈ A | g(x)})(x)=.
+#+begin_example
+                             f({a ∈ A | g(a)})(x)
+                           = (y ↦ y ∈ {a ∈ A | g(a)})(x)
+                           = x ∈ {a ∈ A | g(a)}
+                           = x ∈ A ∧ g(x)
+                           = g(x)
+#+end_example
+
+Dokažimo, da je injekcija: Naj bosta =X,Y ∈ P(A)=. Predpostavimo =f(X) = f(Y)=.
+Dokazati moramo =X = Y=.
+Naj bo =x ∈ X=. Dokažimo =x ∈ Y=. Vemo =f(X)(x)=, ker =x ∈ X=. Ker pa velja =f(X) = f(Y)=, velja tudi =f(Y)(x)=, oz. =(y ↦ y ∈ Y)(x)=. Torej velja =x ∈ Y=.
+Podobno dokažemo, da je =Y= podmnožica =X=.

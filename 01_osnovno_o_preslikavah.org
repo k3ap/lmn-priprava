@@ -1,0 +1,90 @@
+#+TITLE: Osnovno o preslikavah
+#+AUTHOR: Patrik Žnidaršič
+
+* Preslikave
+
+Preslikava je matematični objekt, ki sestoji iz treh sestavnih delov; domena, kodomena in prirejanje. Domena in kodomena sta množici, za prirejanje pa velja, da vsakemu elementu domene priredi natanko določen element kodomene (je /enolično/ in /celovito/). Prirejanje lahko podamo na več različnih načinov; najbolj preprosto kar s tabelo, kjer vsakemu elementu domene pripišemo nek element kodomene. V večini primerov pa prirejanje podamo s funkcijskim predpisom. Le-tega zapišemo s puščico s klinom, na levi strani katere je opis oblike elementa iz domene, na desni strani pa izraz (v odvisnosti od spremenljivk, uvedenih na levi), katerega rezultat je element kodomene. Preprost primer prirejanja je prirejanje funkcije =id_A= na množici =A=:
+
+                                   =x ↦ x=
+
+To funkcijo imenujemo /identiteta na A/. Funkcijskih predpisov je lahko tudi več, če so elementi domene različnih oblik; npr. če podajamo funkcijo =f: A+B → C=, lahko elemente opišemo na dva različna načina:
+
+                             =in_1 x ↦ ... x ...=
+                             =in_2 y ↦ ... y ...=
+                             
+
+Funkcijski predpis lahko podamo tudi po kosih, kot npr. podajamo absolutno vrednost; tedaj moramo paziti, da kosi pokrijejo celotno domeno (torej, da je funkcija celovita), in da se kosi medseboj ne prekrivajo; prekrivanje je izjemoma dopustno, če različni kosi v točkah prekritja podajajo enake vrednosti.
+
+V podajanju funkcijskega predpisa uvedemo eno ali več vezanih spremenljivk. Te spremenljivke lahko uvedemo le na levi strani predpisa, zato npr. naslednji predpis za funkcijo =f: A → B= ni veljaven:
+
+                                   =x ↦ y=
+
+Ne samo, da ni jasno, kateri element množice =B= je mišljen kot =y=, pojavijo se lahko še drugi problemi; kaj naj bi =y= bil, če je =B= prazna množica? Ali je =y= unikaten za vse =x ∈ A=, ali je za vsakega različen?
+
+Vezane spremeljivke so prav tako veljavne le znotraj funkcijskega predpisa. Če npr. podamo funkcijo =f: ℝ → ℝ= s predpisom =x ↦ x²=, spremenljivka =x= zunaj tega predpisa ni definirana. Če pa spremeljivki =x= podamo vrednost zunaj predpisa, je predpis =x ↦ x²= definiran le za ta =x=; predpis =y ↦ x= pa bi pomenil, da vsakemu elementu domene priredimo vrednost spremenljivke =x=.
+
+** Preslikave in prazne množice
+
+Naj bo =A= množica. Tedaj obstaja natanko ena preslikava =∅ → A=; obstoj dokažemo s tabelo:
+
+                                   | x | y |
+                                   |---+---|
+                                   
+da pa sta vsaki dve preslikavi =∅ → A= enaki, sledi iz ekstenzionalnosti preslikav.
+
+Iz tega sledi, da obstaja natanko ena preslikava =∅ → ∅=. Če pa je =A= neprazna množica, pa ne obstaja nobena preslikava =A → ∅=, ker nikoli ne bo celovita.
+
+* Kompozitum preslikav
+  
+Za preslikavi =f: A → B= ter =g: B → C= je funkcija =g∘f : A → C= definirana s predpisom
+
+                                 =x ↦ g(f(x))=
+                              
+** Asociativnost
+Operacija komponiranja je asociativna; naj bodo =f: A → B=, =g: B → C= ter =h: C → D= funkcije. Tedaj velja =h∘(g∘f) = (h∘g)∘f=.
+
+*** Dokaz
+Naj bo =x ∈ A=. Tedaj je
+#+begin_example
+                                (h ∘ (g ∘ f))(x)
+                               = h((g∘f)(x))
+                               = h(g(f(x)))
+                               = (h∘g)(f(x))
+                               = ((h∘g)∘f)(x)
+#+end_example
+
+** Nevtralni element
+
+Identiteta je nevtralni element za komponiranje.
+
+*** Dokaz
+   
+Naj bo =f: A → B=. Tedaj velja
+#+begin_example
+                                  (id_B ∘ f)(x)
+                                = id_B ( f(x) )
+                                = f(x)
+#+end_example
+
+#+begin_example
+                                   (f ∘ id_A)(x)
+                                 = f(id_A (x))
+                                 = f(x)
+#+end_example
+
+* Eksponentna množica
+
+Eksponentna množica =B^A= je množica vseh preslikav z domeno =A= in kodomeno =B=.
+
+* Uporabne preslikave višjega reda
+- Evalvacija/aplikacija je preslikava višjega reda, ki slika iz =B^A ⨯ A= v =B= s predpisom =(f,x) ↦ f(x)=.
+- Tudi komponiranje lahko obravnavamo kot preslikavo višjega reda, in sicer kot =C^B ⨯ B^A → C^A= s predpisom =(g,f) ↦ (x ↦ g(f(x)))=
+- /Currying/ je prav tako preslikava višjega reda: =A^(B × C) → (A^B)^C=, =f ↦ (c ↦ (b ↦ f(b, c)))=
+
+* Kodiranje preslikav
+
+Preslikavo =f: A → B= lahko zakodiramo kot množico z uporabo funkcijske relacije =R ⊂ A ⨯ B=, ki ima naslednji lastnosti:
+- celovitost: =∀ x ∈ A. ∃ y ∈ B. x R y=
+- enoličnost: =∀ x ∈ A. ∀ y,z ∈ B. x R y ∧ x R z ⇒ y = z=
+
+Tedaj velja =f(x) = y ⇔ x R y= za elementa =x ∈ A= ter =y ∈ B=.

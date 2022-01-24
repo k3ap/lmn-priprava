@@ -1,0 +1,50 @@
+#+TITLE: Osnovne konstrukcije množic
+#+AUTHOR: Patrik Žnidaršič
+
+* Na splošno o množicah
+
+Množica je matematični objekt, na katerem lahko uporabimo relacijo =∈=. Velja princip /ekstenzionalnosti množic/, ki pravi, da je množica natanko določena s svojimi elementi; če velja
+                     =∀ x ∈ A. x ∈ B= in =∀ y ∈ B. y ∈ A=,
+potem sta množici =A= in =B= enaki. To pravilo lahko uporabimo tudi za definicijo množice, npr.
+                                 =x ∈ A ⇔ ...x...=
+                                 
+
+Če želimo napisati konkretno kočno množico, lahko to storimo tako, da naštejemo njene elemente v zavitih oklepajih; ={1, 2, 3, burek, klobasa}=
+                                 
+** Znane končne množice
+- Prazna množica, označena z =∅=, nima elementov
+- Standardni enojec je =1 = {()}=. To je množica, ki vsebuje natanko en element, in sicer urejeno 0-terico.
+  - Množica =A= je /enojec/, kadar ima natanko en element; torej =(∃ x ∈ A. ⊤) ∧ (∀ x,y ∈ A. x = y)=
+- =2 = {⊤, ⊥}= je množica z dvema elementoma, resnico in neresnico.
+
+* Osnovne konstrukcije množic
+
+** Produkt množic
+
+Naj bosta =A= in =B= množici. Tedaj je =A⨯B= množica, katere elementi so oblike =(x,y)=, kjer je =x ∈ A= ter =y ∈ B=.
+
+Element =u ∈ A⨯B= se imenuje /urejen par/. Posamezni komponenti lahko iz para izrazimo z uporabo projekcij: če je =u = (x,y)=, potem je =x = pr_1 u= ter =y = pr_2 u=.
+
+Množimo lahko tudi več množic hkrati; tedaj je =A⨯B⨯C= množica, katere elementi so urejene trojice, itn.
+
+** Vsota množic
+
+Naj bosta =A= in =B= množici. Tedaj je =A+B= množica, katere elementi so oblike =in_1 x= za =x ∈ A= ali =in_2 y= za =y ∈ B=.
+
+Seštevamo lahko tudi več množic; tedaj je =A+B+C= množica, ki ima poleg elementov =A+B= tudi elemente oblike =in_3 x= za =x ∈ C=, in podobno za vsoto večih množic.
+
+** Eksponentna množica
+
+Naj bosta =A= in =B= množici. Tedaj je =B^A= množica, katere elementi so preslikave z domeno =A= in kodomeno =B=.
+
+* Aritmetika množic
+  
+Z množicami lahko "računamo" podobno kot s števili; le da namesto enačaja pišemo znak za izomorfizem.
+Našteti so nekateri primeri;
+
+                                  =A+B ≅ B+A=
+                                  =A + ∅ ≅ A=
+                                  =A ⨯ 1 ≅ A=
+                                  =A⨯B ≅ B⨯A=
+                             =A⨯(B+C) ≅ A⨯B + A⨯C=
+                             =(A⨯B)^C ≅ A^C ⨯ B^C=

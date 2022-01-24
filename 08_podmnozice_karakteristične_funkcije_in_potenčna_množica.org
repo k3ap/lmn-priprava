@@ -1,0 +1,42 @@
+#+TITLE: Podmnožice, karakteristične funkcije in potenčna množica
+#+AUTHOR: Patrik Žnidaršič
+
+* Podmnožica
+
+Naj bo =A= množica. Množica =B= je /podmnožica/ množice =A=, če velja =∀ x ∈ B. x ∈ A=.
+Podmnožice lahko tvorimo z naslednjo konstrukcijo: =B = {x ∈ A | ϕ(x)}=. Tedaj velja =x ∈ B ⇔ x ∈ A ∧ ϕ(x)=.
+
+Princip ekstenzionalnosti množic lahko opišemo z uporabo podmnožic: =S = T ⇔ S ⊆ T ∧ T ⊆ S=.
+
+Za vsako podmnožico =S ⊆ A= lahko definiramo /kanonično inkluzijo/ oz. /vložitev/, t.j. preslikavo =i: S → A= s predpisom =x ↦ x=. Za =f: A → B= lahko tedaj definiramo /zožitev f na S/ =f|_S : S → B=, ki je kar enaka =f ∘ i=.
+
+** Potenčna množica
+
+Množico vseh podmnožic množice =A= označimo =P(A)=.
+Podmožico =B ⊂ A= lahko opišemo tudi s karakteristično preslikavo =ϕ_B: A → 2=. Tedaj velja =x ∈ B ⇔ x ∈ A ∧ ϕ_B(x)=. Vsaka taka preslikava enolično opisuje podmnožico, vsaki podmnožici lahko tako preslikavo pripišemo; torej sta množici =2^A= ter =P(A)= izomorfni.
+
+** Boolova algebra potenčne množice
+   
+Operacije presek, unija in komplement na potenčni množici tvorijo Boolovo algebro.
+Poleg tega tvori potenčna množica komutativno grupo za operacijo simetrične razlike =⊕=.
+
+* Cantorjev izrek
+
+Cantorjev izrek trdi =|A| < |P(A)|=.
+
+Naj bo =A= množica. Dokažimo =|A| ≤ |P(A)|=. To storimo tako, da podamo injekcijo =A → P(A)=;
+
+                                   =x ↦ {x}=
+                                   
+Očitno je res injekcija, in res slika v =P(A)=.
+
+Dokažimo sedaj še =|A| ≠ |P(A)|=. Dokazujemo, da ne obstaja bijekcija =A → P(A)=. Zadostuje pokazati, da ni nobena taka preslikava surjektivna.
+
+Naj bo =f: A → P(A)=. Dokažimo, da ni surjektivna; torej =∃ S ∈ P(A). ∀ x ∈ A. g(x) ≠ S=.
+Podamo =S = {x ∈ A | x ∉ g(x)}=. Očitno je =S ⊂ A=.
+
+Dokažimo =∀ x ∈ A. g(x) ≠ S=. Naj bo =x ∈ A=. Predpostavimo =g(x) = S= in poiščimo protislovje.
+- Dokažimo =x ∉ S=. Če je =x ∈ S=, potem po definiciji =S= sledi =x ∉ S=, kar je protislovno.
+- Dokažimo =x ∈ S=. Če je =x ∉ S=, potem po definiciji =S= sledi =x ∈ S=, kar je protislovno.
+
+Ti trditvi sta protislovni, zato velja =g(x) ≠ S=.

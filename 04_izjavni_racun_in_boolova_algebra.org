@@ -1,0 +1,36 @@
+#+TITLE: Izjavni račun in boolova algebra
+#+AUTHOR: Patrik Žnidaršič
+
+* Osnovni logični vezniki
+
+Izjavni račun je sestavljen iz izjavnih spremenljivk (katerih vrednosti so /resnica/ ali /neresnica/), ter logičnih veznikov. Najpogostejši binarni logični vezniki so:
+- disjunkcija (=∨=), ki je resnična, kadar je vsaj eden od vhodov resničen
+- konjunkcija (=∧=), ki je resnična, kadar sta oba vhoda resnična
+- ekvivalenca (=⇔=), ki je resnična, kadar sta vhoda enaka
+- implikacija (=⇒=), ki je neresnična, če je levi vhod resničen in desni neresničen
+  - levemu argumentu pravimo /antecedent/, desnemu pa /konsekvent/
+
+Poznamo še unarno negacijo (=¬=), ki je resnična, kadar je vhod neresničen.
+
+Pravila za računanje s temi vezniki se kolektivno imenujejo Boolova algebra. Računska pravila lahko dokazujemo s tabelami in definicijami veznikov. Nekatera pravila so našteta spodaj:
+- komutativnost, idempotentnost in asociativnost disjunkcije in konjunkcije
+- resnica je nevtralni element za konjunkcijo
+- neresnica je nevtralni element za disjunkcijo
+- veljata oba distributivnostna zakona
+- negacija je involucija: =¬(¬p) = p=
+- de Morganova zakona
+- zakon o izključeni tretji možnosti: =p ∨ ¬p = ⊤=
+- zakon o nekontradikciji: =p ∧ ¬p = ⊥=
+- negacija resnice je neresnica
+- negacija neresnice je resnica
+- pravili absorbcije
+
+Neomenjeno implikacijo in ekvivalenco lahko zapišemo v omenjenih treh osnovnih veznikih (pravimo, da so /polni nabor/, ker lahko z njimi zapišemo kakršnokoli logično formulo), in sicer tako:
+- =p ⇒ q= je ekvivalentno =¬p ∨ q=
+- =p ⇔ q= je ekvivalentno =p∧q ∨ ¬p∧¬q=
+  
+* Boolove preslikave
+  
+Preslikavi  =2 ⨯ 2 ⨯ ... ⨯ 2 → 2= pravimo /Boolova preslikava/. Lahko jo prikažemo z resničnostno tabelo, ki ima =n= vrstic (kjer je =n= število faktorjev v domeni).
+  
+Za boolovo preslikavo rečemo, da je /tavtologija/, kadar je njena vrednost resnična ne glede na vrednosti izjavnih spremenljivk; dodatno velja, da ima izjava (ki uprablja le te veznike) dokaz natanko tedaj, ko je tavtologija.

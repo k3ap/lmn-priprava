@@ -1,0 +1,22 @@
+#+TITLE: Množice in razredi
+#+AUTHOR: Patrik Žnidaršič
+
+* Russelov paradoks in razredi
+
+Pojavlja se vprašanje, če je zapis ={x | ϕ(x)}= smiselen; tako ustvarjena množica bi vsebovala vse matematične objekte, za katere je =ϕ(x)= hkrati smiselen in resničen pogoj. Izkaže pa se, da nas taka formulacija lahko privede do nepričakovanih paradoksov.
+
+Naj bo =R = {S | S ∉ S}= množica vseh množic, ki niso elementi samih sebe. Sedaj razmislimo, ali je =R ∈ R=?
+- če bi veljalo =R ∈ R=, bi moralo veljati =R ∉ R= po definiciji =R=
+- če bi veljalo =R ∉ R=, bi moralo veljati =R ∈ R= po definiciji =R=
+
+Rešitev iz te zagate se pojavi v pojmu razredov; tako kot množice lahko razredi vsebujejo urelemente ter množice, razlika pa je v tem, da (nekateri) razredi ne morajo biti elementi ničesar.
+
+Vsako množico lahko predstavimo z razredom, če pa želimo razred predstaviti z množico, moramo prvo dokazati, da pri tem ne pride do podobnih paradoksov. Russelov razred =R= je torej /pravi razred/ - ne moremo ga predstaviti z množico. Paradoksu se izognemo, ker je vprašanje =R ∈ R= nesmiselno; izraz sam je neveljaven, zato ne moremo razpravljati o njegovi pravilnosti ali nepravilnosti.
+
+* Primeri pravih razredov
+
+Poznamo nekatere primere pravih razredov:
+- Russelov razred
+- Razred vseh množic (=Set=)
+- Razred vseh enojcev
+- Razred vseh grup, vseh kolobarjev, vseh vektorskih prostorov, ...
