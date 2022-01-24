@@ -1,0 +1,20 @@
+#+TITLE: Slike in praslike
+#+AUTHOR: Patrik Žnidaršič
+
+* Slike in praslike
+
+Naj bo =f: A → B= funkcija.
+- če je =S ⊆ A=, definiramo /sliko/ =f_*(S) = {y ∈ B | ∃ x ∈ S. f(x) = y}=
+- če je =T ⊆ B=, definiramo /prasliko/ =f^*(T) = {x ∈ A | f(x) ∈ T}=
+  
+Sliko in prasliko lahko obravnavamo tudi kot preslikavi med potenčnimi množicami domene in kododmene.
+Prasliki se domena in kodomena "obrneta" - =f^* : P(B) → P(A)=
+
+** Slike in praslike kompozituma
+
+Velja =(g∘f)_* (S) = g_* ( f_* (S))= in =(g∘f)^* (S) = f^* ( g^* (S))=
+
+** Slike in praslike unije in preseka
+   
+Slika unije je unija slik; prav tako je slika preseka enaka preseku slik.
+Enako velja tudi za praslike.

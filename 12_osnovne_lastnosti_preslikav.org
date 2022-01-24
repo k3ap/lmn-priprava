@@ -1,0 +1,91 @@
+#+TITLE: Osnovne lastnosti preslikav
+#+AUTHOR: Patrik Žnidaršič
+
+* Lastnosti preslikav
+
+Naj bo =f: A → B= preslikava.
+- =f= je /injektivna/, če velja =∀ x, y ∈ A. f(x) = f(y) ⇒ x = y=
+- =f= je /surjektivna/, če velja =∀ y ∈ B. ∃ x ∈ A. f(x) = y=
+- =f= je /bijektivna/, če je hkrati injektivna in surjektivna.
+  
+#+begin_verse
+                                 Ko sklep velja,
+                             da vsaka dva enaka sta,
+                           če v isto stvar se slikata,
+                                 je f injekcija.
+#+end_verse
+
+#+begin_verse
+                               Vsak y iz kodomene
+                            x ima, ki k njemu krene.
+                           Lastnost opisana fiktivna
+                          in funkcija je surjektivna.
+#+end_verse
+
+Naj bodo =f: A → B=, =g_i: B → C= in =h_i: D → A= za =i ∈ {1,2}= preslikave.
+- =f= je /monomorfizem/, če jo lahko krajšamo na levi; torej če velja sklep =f ∘ h_1 = f ∘ h_2 ⇒ h_1 = _2=
+- =f= je /epimorfizem/, če jo lahko krajšamo na desni; torej če velja sklep =g_1 ∘ f = g_2 ∘ f ⇒ g_1 = g_2=
+
+*  Zveze med lastnosti
+
+** monomorfizem in injektivnost
+
+=f: A → B= je monomorfizem natanko tedaj, ko je =f= injektivna.
+
+Preverimo implikacijo v desno smer; naj bo =f= monomorfizem, =x,y ∈ A= ter predpostavimo =f(x) = f(y)=
+#+begin_example
+                                  f(x) = f(y)
+                              f(id(x)) = f(id(y))
+                                 id(x) = id(y)
+                                     x = y
+#+end_example
+
+Preverimo implikacijo v levo smer; naj bo =f= injektivna, ter =h_1, h_2 : D → A=. Predpostavimo =f ∘ h_1 = f ∘ h_2=. Naj bo =x ∈ D=.
+
+#+begin_example
+                               f ∘ h_1 = f ∘ h_2
+                             f(h_1(x)) = f(h_2(x))
+                                h_1(x) = h_2(x)
+#+end_example
+
+Po principu ekstenzionalnosti preslikav velja =h_1 = h_2=
+
+** epimorfizem in surjektivnost
+
+=f: A → B= je epimorfizem natanko tedaj, ko je =f= surjektivna.
+
+Preverimo implikacijo v desno smer; naj bo =f= epimorfizem. Definiramo preslikavi =g_1, g_2 : B → 2= s predpisoma =g_1(y) = ∃ x ∈ A. f(x) = y= ter =g_2(y) = ⊤=. Naj bo =x ∈ A=. Ker velja =g_1(f(x))=, in ker velja =g_2(f(x))=, velja =g_1 ∘ f = g_2 ∘ f=; iz tega sledi =g_1 = g_2= in posledično dejstvo, da je =f= surjektivna.
+
+Preverimo implikacijo v levo smer; naj bo =f= surjektivna, in naj bosta =g_1, g_2 : B → C= funkciji. Predpostavimo =g_1 ∘ f = g_2 ∘ f=. Naj bo =y ∈ B=. Vemo, da obstaja =x ∈ A=, da je =f(x) = y=
+#+begin_example
+                    g_1(y) = g_1(f(x)) = g_2(f(x)) = g_2(y)
+#+end_example
+
+** Bijekcije in izomorfizmi
+
+=f: A → B= je bijektivna natanko tedaj, ko je izomorfizem.
+
+Dokažimo implikacijo v desno smer; naj bo =f= bijektivna. Tedaj velja =∀ y ∈ B. ∃! x ∈ A. f(x) = y=.
+Definiramo =f⁻¹ : B → A= s predpisom =f⁻¹(y) = ɩx ∈ A. f(x) = y=.
+Preverimo, da je =f⁻¹= inverz =f=:
+#+begin_example
+                                 f⁻¹(f(x))
+                              =  ɩx ∈ A. f(x) = f(x)
+                              =  x
+#+end_example
+
+#+begin_example
+                                f(f⁻¹(y))
+                             =  f(ɩx ∈ A. f(x) = y)
+                             =  y
+#+end_example
+
+Dokažimo implikacijo v desno smer; naj bo =f= izomorfizem. Tedaj ima inverz =g: B → A=.
+Preverimo, da je =f= injektivna: naj bosta =x,y ∈ A=. Predpostavimo =f(x) = f(y)=
+#+begin_example
+                                  f(x) = f(y)
+                               g(f(x)) = g(f(y))
+                                     x = y
+#+end_example
+
+Preverimo, da je =f= surjektivna: naj bo =y ∈ B=. Podamo =x = g(y)=. Velja =f(x) = f(g(y)) = y=.

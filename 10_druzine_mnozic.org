@@ -1,0 +1,38 @@
+#+TITLE: Družine množic
+#+AUTHOR: Patrik Žnidaršič
+
+* Družine množic
+
+Naj bo =I= množica. Tedaj je preslikava =A: I → Set= /družina množic/, množico =I= pa imenujemo /indeksna množica/.
+
+Če je =I= prazna, družino imenujemo /prazna družina/; če pa je =A_i = ∅= za vsak =i ∈ I=, je =A= /družina praznih množic/.
+
+** Unija in presek
+
+Unija družine množic =U_i A_i= je definirana kot ={x | ∃ i ∈ I. x ∈ A_i}=. Po aksiomu o uniji je unija družine množic množica; torej ni razred.
+
+Presek družine množic =∩_i A_i= je ={x | ∀ i ∈ I. x ∈ A_i}=. Presek je pravi razred natanko tedaj, ko je =I = ∅=.
+
+** Funkcije izbire
+
+Za družino lahko definiramo funkcijo izbire =f: I → U A=, za katero velja =f(i) ∈ I= za vsak =i ∈ I=.
+
+Aksiom izbire pravi, da ima vsaka družina nepraznih množic funkcijo izbire.
+
+** Vsota in produkt
+
+Vsota družine množic je množica =Σ_i A_i = {in_i x | i ∈ I, x ∈ A_i}=.
+
+Produkt družine množic je množica =Π_i A_i = {f: I → U_i A_i | f(i) ∈ A_i}= funkcij izbire za družino =A=.
+
+* Izomorfizmi
+  
+Naj bo =A: I → Set= konstantna družina množic, ki slika v =T=. Tedaj je
+#+begin_example
+                                Σ_i A_i ≅ I ⨯ T
+#+end_example
+
+Poleg tega je
+#+begin_example
+                                 Π_i A_i ≅ T^I
+#+end_example
