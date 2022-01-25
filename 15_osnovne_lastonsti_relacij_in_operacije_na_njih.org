@@ -1,0 +1,33 @@
+#+TITLE: Osnovne lastnosti relacij in operacije na njih
+#+AUTHOR: Patrik Žnidaršič
+
+* Relacije
+
+Naj bodo =A_1, A_2, ..., A_n= množice. Množico =R ⊆ A_1 ⨯ A_2 ⨯ ... ⨯ A_n= imenujemo =n=-člena relacija med temi množicami. Kadar sta množici dve, pravimo relaciji /binarna/.
+
+** Lastnosti relacij
+
+Naj bo =R= binarna relacija na =A=. Poznamo naslednje lasnosti:
+- refleksivnost: =∀ x ∈ A. xRx=
+- simetričnost: =∀ x,y ∈ A. xRy ⇒ yRx=
+- antisimetričnost: =∀ x,y ∈ A. xRy ∧ yRx ⇒ x=y=
+- asimetričnost: =∀ x,y ∈ A. xRy ⇒ ¬(yRx)=
+- tranzitivnost: =∀ x,y,z ∈ A. xRy ∧ yRz ⇒ xRz=
+- sovisnost: =∀ x,y ∈ A. xRy ∨ yRx ∨ x = y=
+- stroga sovisnost: =∀ x,y ∈ A. xRy ∨ yRx=
+
+** Osnovne operacije
+
+Naj bo =R ⊆ A ⨯ B= relacija. Tedaj je =R^T ⊆ B ⨯ A= relacija, za katero velja =x R^T y ⇔ y R x=.
+
+Unije, preseki relacij so definirani smiselno v skladu z unijo in presekom množic.
+
+** Kompozitum relacij
+
+Naj bo =R ⊆ A ⨯ B= in =S ⊆ B ⨯ C=. Tedaj je =S ∘ R = {(a,c) ∈ A ⨯ C | ∃ b ∈ B. aRb ∧ bSc}= kompozitum relacij.
+
+** Ovojnice
+
+Naj bo =R= relacija na =A=. V splošnem lahko na več načinov "dopolnimo" =R= do relacije, ki je tranzitivna. Ker je univerzalna relacija tranzitivna (očitno), taka dopolnitev tudi vedno obstaja. Presek vseh teh dopolnitev je tranzitivna relacija, ki pa je tudi podmnožica vseh ostalih tranzitivnih dopolnitev. Ta presek imenujemo /tranzitivna ovojnica relacije R/.
+
+Podobno lahko definiramo simetrično, ipd. ovojnico relacije.

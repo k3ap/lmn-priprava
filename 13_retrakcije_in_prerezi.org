@@ -1,0 +1,12 @@
+#+TITLE: Retrakcije in prerezi
+#+AUTHOR: Patrik Žnidaršič
+
+* Retrakcije in prerezi
+
+Naj bosta =f: A → B= ter =g: B → A= funkciji. Če velja =f ∘ g = id_B=, potem pravimo, da je =f= /retrakcija/, =g= pa /prerez/.
+
+** Lastnosti
+
+=f= je surjektivna; naj bo =y ∈ B=. Tedaj velja =f(g(y)) = y=.
+
+=g= je injektivna; naj bosta =x,y ∈ B=. Predpostavimo =g(x) = g(y)=. Tedaj velja =f(g(x)) = f(g(y))= in =x = y=.

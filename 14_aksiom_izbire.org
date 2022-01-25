@@ -1,0 +1,12 @@
+#+TITLE: Aksiom izbire
+#+AUTHOR: Patrik Žnidaršič
+
+* Aksiom izbire
+
+Naslednje trditve so ekvivalentne:
+1. Vsaka surjektivna preslikava ima prerez
+2. Vsaka ekvivalenčna relacija ima izbor predstavnikov
+3. Vsaka družina nepraznih množic ima funkcijo izbire
+4. Produkt družine nepraznih množic je neprazen
+   
+Običajno vzamemo 3. trditev kot aksiom izbire.
