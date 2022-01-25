@@ -25,6 +25,12 @@ Naj bo =f: A → B= preslikava.
 Naj bodo =f: A → B=, =g_i: B → C= in =h_i: D → A= za =i ∈ {1,2}= preslikave.
 - =f= je /monomorfizem/, če jo lahko krajšamo na levi; torej če velja sklep =f ∘ h_1 = f ∘ h_2 ⇒ h_1 = _2=
 - =f= je /epimorfizem/, če jo lahko krajšamo na desni; torej če velja sklep =g_1 ∘ f = g_2 ∘ f ⇒ g_1 = g_2=
+  
+** Kompozicije
+- Kompozicija monomorfizmov je monomorfizem
+- Kompozicija epimorfizmov je epimorfizem
+- Če je =g ∘ f= monomorfizem, je =f= monomorfizem
+- Če je =g ∘ f= epimorfizem, je =g= epimorfizem
 
 *  Zveze med lastnosti
 

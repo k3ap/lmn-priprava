@@ -6,6 +6,7 @@
 Naj bo =I= množica. Tedaj je preslikava =A: I → Set= /družina množic/, množico =I= pa imenujemo /indeksna množica/.
 
 Če je =I= prazna, družino imenujemo /prazna družina/; če pa je =A_i = ∅= za vsak =i ∈ I=, je =A= /družina praznih množic/.
+Množice v družinah se lahko tudi ponavljajo; družina je lahko tudi /konstantna/, t.j. vedno slika v isto množico.
 
 ** Unija in presek
 
@@ -21,13 +22,14 @@ Aksiom izbire pravi, da ima vsaka družina nepraznih množic funkcijo izbire.
 
 ** Vsota in produkt
 
-Vsota družine množic je množica =Σ_i A_i = {in_i x | i ∈ I, x ∈ A_i}=.
+Vsota družine množic je množica =Σ_i A_i = {in_i x | i ∈ I, x ∈ A_i}=. Preslikavi =in_j : A_j → Σ_i A_i= pravimo =j=-ta injekcija.
 
 Produkt družine množic je množica =Π_i A_i = {f: I → U_i A_i | f(i) ∈ A_i}= funkcij izbire za družino =A=.
+Za vsak =j ∈ I= lahko definiramo =j=-to projekcijo =pr_j : Π_i A_i → A_j= s predpisom =f ↦ f(j)=.
 
-* Izomorfizmi
+** Posebni primeri vsote in produkta
   
-Naj bo =A: I → Set= konstantna družina množic, ki slika v =T=. Tedaj je
+Naj bo =A: I → Set= /konstantna/ družina množic, ki slika v =T=. Tedaj je
 #+begin_example
                                 Σ_i A_i ≅ I ⨯ T
 #+end_example

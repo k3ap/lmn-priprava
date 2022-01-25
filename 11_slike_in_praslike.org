@@ -1,6 +1,10 @@
 #+TITLE: Slike in praslike
 #+AUTHOR: Patrik Žnidaršič
 
+* Izpeljana množica
+
+Naj bo =f: A → B= preslikava. Definiramo /izpeljano množico/ ={f(x) | x ∈ A}= kot množico ={y ∈ B | ∃ x ∈ A. f(x) = y}=.
+
 * Slike in praslike
 
 Naj bo =f: A → B= funkcija.
@@ -14,7 +18,38 @@ Prasliki se domena in kodomena "obrneta" - =f^* : P(B) → P(A)=
 
 Velja =(g∘f)_* (S) = g_* ( f_* (S))= in =(g∘f)^* (S) = f^* ( g^* (S))=
 
-** Slike in praslike unije in preseka
-   
-Slika unije je unija slik; prav tako je slika preseka enaka preseku slik.
-Enako velja tudi za praslike.
+* Lastnosti slike in praslike
+
+** Monotonost slike in praslike
+
+Naj bo =f: A → B= funkcija. Če je =S ⊆ T ⊆ A=, je =f_*(S) ⊆ f_*(T)=. Če je =C ⊆ D ⊆ B=, je =f^*(C) ⊆ f^*(D)=.
+
+Dokažimo prvo trditev: Naj bo =y ∈ f_*(S)=. Tedaj obstaja =x ∈ S=, da je =f(x) = y=. Ker je =S= podmnožica =T=, je =x ∈ T=. Torej je =y = f(x) ∈ f_*(T)=.
+
+Dokažimo drugo trditev: Naj bo =x ∈ f^*(C)=. Tedaj =f(x) ∈ C=. Ker je =C ⊆ D=, je =f(x) ∈ D= in po definiciji =x ∈ f^*(D)=.
+
+** Praslike presekov in unij
+
+Naj bo =f: A → B= preslikava in =S: I → P(B)= družina množic. Tedaj velja:
+- =f^*(U_i S_i) = U_i f^*(S_i)=
+- =f^*(∩_i S_i) = ∩_i f^*(S_i)=
+
+Dokažimo prvo izjavo: Naj bo =x ∈ f^*(U_i S_i)=. Tedaj velja =f(x) ∈ U_i S_i=, torej =∃ i ∈ I. f(x) ∈ S_i=. Torej =f(x) ∈ U_i f^*(S_i)=.
+
+Naj bo =x ∈ U_i f^*(S_i)=. Tedaj velja =∃ i ∈ I. f(x) ∈ S_i=, torej =f(x) ∈ U_i S_i=. Iz tega sledi =x ∈ f^*(U_i S_i)=.
+
+Dokaz za drugo trditev je zelo podoben.
+
+** Slike presekov in unij
+
+Naj bo =f: A → B= funkcija in =S: I → P(A)= družina množic. Tedaj velja:
+- =f_*(U_i S_i) = U_i f_*(S_i)=
+- =f_*(∩_i S_i) ⊆ ∩_i f_*(S_i)=
+
+Dokažimo prvi izrek: Naj bo =y ∈ f_*(U_i S_i)=. Tedaj =∃ x ∈ U_i S_i . f(x) = y=. Torej =∃ i ∈ I . x ∈ S_i=. Torej =y = f(x) ∈ f_* (S_i)=, torej =y ∈ U_i f_*(S_i)=.
+
+Naj bo =y ∈ U_i f_*(S_i)=. Torej =∃ i ∈ I . y ∈ f_*(S_i)=. Torej =∃ x ∈ S_i . f(x) = y=. Torej =x ∈ U_i S_i=, iz česar sledi =y = f(x) ∈ f_*(U_i S_i)=.
+
+Dokažimo drugi izrek: Naj bo =y ∈ f_*(∩_i S_i)=. Torej =∃ x ∈ ∩_i S_i . f(x) = y=. Sledi =∀ i ∈ I . x ∈ S_i=. Torej =∀ i ∈ I . f(x) ∈ f_*(S_i)=. Torej =y = f(x) ∈ ∩_i f_*(S_i)=.
+
+Druga trditev v obratno smer ne velja!
