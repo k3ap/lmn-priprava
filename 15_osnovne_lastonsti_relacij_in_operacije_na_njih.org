@@ -3,12 +3,17 @@
 
 * Relacije
 
-Naj bodo =A_1, A_2, ..., A_n= množice. Množico =R ⊆ A_1 ⨯ A_2 ⨯ ... ⨯ A_n= imenujemo =n=-člena relacija med temi množicami. Kadar sta množici dve, pravimo relaciji /binarna/.
+Naj bodo =A_1, A_2, ..., A_n= množice. Množico =R ⊆ A_1 ⨯ A_2 ⨯ ... ⨯ A_n= imenujemo =n=-člena relacija na teh množicah. Kadar sta množici dve, pravimo relaciji /binarna/; tedaj prvo množico imenujemo /domena/ relacije, drugo pa /kodomena/ relacije.
+
+Vedno lahko definiramo prazno relacijo in univerzalno relacijo.
+
+Binarne relacije na množici =A= lahko predstavimo z usmerjenih grafom, kjer za vozlišča vzamemo elemente množice, ki jih povežemo glede na relacijo.
 
 ** Lastnosti relacij
 
 Naj bo =R= binarna relacija na =A=. Poznamo naslednje lasnosti:
 - refleksivnost: =∀ x ∈ A. xRx=
+- irefleksivnost: =∀ x ∈ A. ¬(xRx)=
 - simetričnost: =∀ x,y ∈ A. xRy ⇒ yRx=
 - antisimetričnost: =∀ x,y ∈ A. xRy ∧ yRx ⇒ x=y=
 - asimetričnost: =∀ x,y ∈ A. xRy ⇒ ¬(yRx)=
@@ -20,14 +25,48 @@ Naj bo =R= binarna relacija na =A=. Poznamo naslednje lasnosti:
 
 Naj bo =R ⊆ A ⨯ B= relacija. Tedaj je =R^T ⊆ B ⨯ A= relacija, za katero velja =x R^T y ⇔ y R x=.
 
-Unije, preseki relacij so definirani smiselno v skladu z unijo in presekom množic.
+Unije, preseki in komplementi relacij so definirani smiselno v skladu z unijo, presekom in komplementom množic.
 
 ** Kompozitum relacij
 
 Naj bo =R ⊆ A ⨯ B= in =S ⊆ B ⨯ C=. Tedaj je =S ∘ R = {(a,c) ∈ A ⨯ C | ∃ b ∈ B. aRb ∧ bSc}= kompozitum relacij.
 
+Kompozitum relacij je asociativen: Naj bo =R ⊆ A ⨯ B=, =S ⊆ B ⨯ C= in =T ⊆ C ⨯ D=. Naj bo =a ∈ A= in =d ∈ D=. Velja
+#+begin_example
+                        a (T ∘ (S ∘ R)) d
+                     ⇔ ∃ c ∈ C . c T d ∧ a (S ∘ R) c
+                     ⇔ ∃ c ∈ C . c T d ∧ ∃ b ∈ B . a R b ∧ b S c
+                     ⇔ ∃ b ∈ B . a R b ∧ ∃ c ∈ C . c T d ∧ b S c
+                     ⇔ ∃ b ∈ B . a R b ∧ b (T ∘ S) d
+                     ⇔ a ((T ∘ S) ∘ R) d
+#+end_example
+
+Diagonala je enota za kompozicijo: Naj bo =R ⊆ A ⨯ B=. Tedaj velja
+#+begin_example
+a (R ∘ Δ_A) b
+⇔ ∃ a' ∈ A . a = a' ∧ a R b
+⇔ a R b
+#+end_example
+
+Podobno dokažemo, da je leva enota.
+
+** Potence relacij
+   
+Za =n ∈ ℕ= definiramo =n=-to potenco relacije =R ⊆ A ⨯ A= kot kompozitum =n=-tih ponovitev =R=; pri čemer je =R⁰ = Δ_A= (enota za kompozitum).
+
 ** Ovojnice
 
-Naj bo =R= relacija na =A=. V splošnem lahko na več načinov "dopolnimo" =R= do relacije, ki je tranzitivna. Ker je univerzalna relacija tranzitivna (očitno), taka dopolnitev tudi vedno obstaja. Presek vseh teh dopolnitev je tranzitivna relacija, ki pa je tudi podmnožica vseh ostalih tranzitivnih dopolnitev. Ta presek imenujemo /tranzitivna ovojnica relacije R/.
+Naj bo =R= relacija na =A=. Pravimo, da je =T ⊆ A ⨯ A= tranzitivna ovojnica =R=, če velja:
+1. =T= je tranzitivna
+2. =R ⊆ T=
+3. če je =S= tranzitivna relacija na =A= in =R ⊆ S=, potem je =T ⊆ S=
+
+V splošnem lahko na več načinov "dopolnimo" =R= do relacije, ki je tranzitivna. Ker je univerzalna relacija tranzitivna (očitno), taka dopolnitev tudi vedno obstaja. Presek vseh teh dopolnitev je tranzitivna relacija, ki pa je tudi podmnožica vseh ostalih tranzitivnih dopolnitev. Možno je pokazati, da je to tranzitivna ovojnica, ter da je enolična.
 
 Podobno lahko definiramo simetrično, ipd. ovojnico relacije.
+
+Izrek nam na žalost ne pove, kako ovojnice izgledajo, velja pa:
+- refleksivna ovojnica je =R U Δ_A=
+- simetrična ovojnica je =R U R^T=
+- tranzitivna ovojnica je =U_n R^n=, kjer je =n > 0=
+  - za =n ≥ 0= dobimo refleksivno tranzitivno ovojnico
