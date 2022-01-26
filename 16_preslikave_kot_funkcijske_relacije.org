@@ -1,0 +1,10 @@
+#+TITLE: Preslikave kot funkcijske relacije
+#+AUTHOR: Patrik Žnidaršič
+
+* Funkcijske relacije
+
+Za relacijo =R ⊆ A ⨯ B= pravimo, da je /funkcijska/, kadar je enolična in celovita.
+
+Funkcijske relacije so pravzaprav način kodiranja funkcij v množice; prirejanje funkcije =f: A → B= lahko zapišemo kot relacijo =R ⊆ A ⨯ B=, kjer velja =a R b ⇔ f(a) = b=. Enoličnost in celovitost relacije izhaja iz enoličnosti in celovitosti funkcije.
+
+Kompozitum funkcijskih relacij ustreza kompozitumu preslikav.

@@ -1,0 +1,23 @@
+#+TITLE: Osnovno o strukturah urejenosti
+#+AUTHOR: Patrik Žnidaršič
+
+* Ureditev
+
+Naj bo =R ⊆ A ⨯ A= relacija.ž
+- =R= je /šibka ureditev/, če je refleksivna in tranzitivna
+- =R= je /delna ureditev/, če je šibka ureditev in antisimetrična
+- =R= je /linearna ureditev/, če je delna ureditev in sovisna
+
+* Meje
+
+Naj bo =R= delna ureditev na =A= in =S ⊆ A=
+- Če je =x ∈ A= tak, da velja =∀ y ∈ S. y R x=, je =x= /zgornja meja/ =S=
+- Če je =x ∈ A= zgornja meja =S= in velja =∀ y ∈ A. y zgornja meja ⇒ x R y=, je =x= /supremum/ =S=
+- Če je =x ∈ S= in velja =∀ y ∈ S. x R y ⇒ x = y=, je =x= /maksimalni element/ =S=
+- Če je =x ∈ S= in velja =∀ y ∈ S. y R x=, je =x= /maksimum/ =S=
+  
+Podobno definiramo meje iz spodnje strani.
+
+* Monotone preslikave
+  
+Naj bo =(P, R)= delna urejenost in =f: P → B= preslikava. =f= je monotona, če velja =∀ x,y ∈ P. x R y ⇒ f(x) R f(y)=.

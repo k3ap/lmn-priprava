@@ -1,0 +1,37 @@
+#+TITLE: Ekvivalenčne relacije in kvocientne množice
+#+AUTHOR: Patrik Žnidaršič
+
+* Ekvivalenčne relacije
+
+Za relacijo =R ⊆ A ⨯ A= pravimo, da je /ekvivalenčna/, če je:
+- refleksivna
+- simetrična
+- tranzitivna
+
+Najbolj preprosta primera ekvivalenčnih relacij sta univerzalna relacija in diagonala.
+
+Za ekvivalenčno relacijo =E= na množici =A= lahko definiramo /ekvivalenčne razrede/:
+                           =[x]_E = {y ∈ A | x E y}=
+                           
+* Kvocientne množice
+
+Naj bo =E= ekvivalenčna relacija na =A=. Tedaj razdeli množico =A= na ekvivalenčne razrede, ki so neprazni, med seboj disjunktni in pokrijejo celotno množico;
+- nepraznost: sledi iz definicije.
+- disjunktnost: če imata =[x]= in =[y]= skupni element =z=, velja =x E z ∧ z E y=, iz česar sledi =x E y= in =[x] = [y]=.
+- pokritje celotne množice: naj bo =x ∈ A=. Velja =x ∈ [x]=.
+
+Množico vseh ekvivalenčnih razredov =E= na =A= imenujemo /kvocientna množica/ in označimo =A/E=. Definiramo lahko /kvocientno preslikavo/ =q: A → A/E= s predpisom =x → [x]=. Zanjo velja, da je surjektivna; naj bo =B ∈ A/E=. Ker je =B= neprazen, obstaja =x ∈ B=. Tedaj velja =[x] = B=, in =q(x) = B=.
+
+** Porojenost s preslikavo
+
+Ekvivalenčna relacija je lahko porojena s preslikavo; če je =f: A → B= funkcija, potem je relacija =~_f= na =A=, podana s predpisom =a ~_f b ⇔ f(a) = f(b)=, ekvivalenčna; refleksivnost, simetričnost in tranzitivnost relacije sledijo iz istih lastnosti relacije ===.
+
+Pravzaprav je vsaka ekvivalenčna relacija porojena s preslikavo; to je ravno kvocientna preslikava.
+
+** Definicija preslikave na kvocientni domeni
+   
+Kadar želimo definirati preslikavo na kvocientni množici, moramo preveriti, da je dobro definirana; drugače povedano, če definiramo =f: A/E → B=, mora veljati =∀ x,y ∈ A. x E y ⇒ f(x) = f(y)=.
+
+* Kanonična razdelitev preslikave
+
+Naj bo =f: A → B= preslikava. Tedaj jo lahko razčlenimo na dve preslikavi =q: A → C= in =i: C → B=, da velja =i ∘ q = f= in: =q= je surjektivna, =i= pa injektivna. Taki razcepi so do izomorfizma natančno enaki.
