@@ -15,12 +15,14 @@ Za ekvivalenčno relacijo =E= na množici =A= lahko definiramo /ekvivalenčne ra
                            
 * Kvocientne množice
 
-Naj bo =E= ekvivalenčna relacija na =A=. Tedaj razdeli množico =A= na ekvivalenčne razrede, ki so neprazni, med seboj disjunktni in pokrijejo celotno množico;
+Naj bo =E= ekvivalenčna relacija na =A=. Tedaj razdeli množico =A= na ekvivalenčne razrede, ki so neprazni, med seboj disjunktni in pokrijejo celotno množico; (pravimo, da je to /particija/ ali /razdelitev/ množice =A=)
 - nepraznost: sledi iz definicije.
 - disjunktnost: če imata =[x]= in =[y]= skupni element =z=, velja =x E z ∧ z E y=, iz česar sledi =x E y= in =[x] = [y]=.
 - pokritje celotne množice: naj bo =x ∈ A=. Velja =x ∈ [x]=.
 
-Množico vseh ekvivalenčnih razredov =E= na =A= imenujemo /kvocientna množica/ in označimo =A/E=. Definiramo lahko /kvocientno preslikavo/ =q: A → A/E= s predpisom =x → [x]=. Zanjo velja, da je surjektivna; naj bo =B ∈ A/E=. Ker je =B= neprazen, obstaja =x ∈ B=. Tedaj velja =[x] = B=, in =q(x) = B=.
+Množico vseh ekvivalenčnih razredov =E= na =A= imenujemo /kvocientna množica/ in označimo =A/E=;
+                     =A/E = {ξ ∈ P(A) | ∃ x ∈ A . ξ = [x]}=
+Definiramo lahko /kvocientno preslikavo/ =q: A → A/E= s predpisom =x → [x]=. Zanjo velja, da je surjektivna; naj bo =B ∈ A/E=. Ker je =B= neprazen, obstaja =x ∈ B=. Tedaj velja =[x] = B=, in =q(x) = B=.
 
 ** Porojenost s preslikavo
 
@@ -31,6 +33,28 @@ Pravzaprav je vsaka ekvivalenčna relacija porojena s preslikavo; to je ravno kv
 ** Definicija preslikave na kvocientni domeni
    
 Kadar želimo definirati preslikavo na kvocientni množici, moramo preveriti, da je dobro definirana; drugače povedano, če definiramo =f: A/E → B=, mora veljati =∀ x,y ∈ A. x E y ⇒ f(x) = f(y)=.
+
+** Izbor predstavnikov
+
+Naj bo =E= ekvivalenčna relacija na =A=. Množico =C ⊆ A=, ki vsak ekvivalenčni razred =E= seka v natanko eni točki, imenujemo /izbor predstavnikv/ za =E=. Izbor predstavnikov določa preslikavo =c: A/E → A=, ki vsakemu ekvivalenčnemu razredu priredi njegovega predstavnika. Ta preslikava je prerez kvocientne preslikave =q=.
+
+Pravzaprav vsak prerez =s: A/E → A= kvocientne preslikave določa izbor predstavnikov s svojo sliko;
+Naj bo =y ∈ s_*(A/E)=. Tedaj je =y ∈ [y]=. Naj bo =[x] ∈ A/E=. Vemo =[x] = q(s([x]))=, iz česar sledi =[x] = [s([x])]=; torej se sekata.
+
+* Univeerzalna lastnost kvocientne množice
+
+Naj bo =E= ekvivalenčna relacija na =A= in =g: A → B= preslikava, skladna z =E=. Tedaj obstaja natanko ena preslikava =f: A/E → B=, da je =f([x]) = g(x)= za vse =x ∈ A= (=f ∘ q = g=).
+
+Dokažimo, da je največ ena taka preslikava; če sta =f_1= in =f_2= taki, potem velja =f_1 ∘ q = f_2 ∘ q=, ker pa je =q= epimorfizem, ga smemo krajšati na desni.
+
+=f= bomo podali s funkcijsko relacijo =ϕ ⊆ A/E ⨯ B=;
+                     =ϕ(ξ,y) :⇔ ∃ x ∈ ξ . g(x) = y=
+                     
+Preverimo, da je res funkcijska:
+- enoličnost: sledi iz skladnosti =g= z =E=
+- celovitost: sledi iz nepraznosti ekvivalenčnega razreda
+  
+Naj bo =x ∈ A=. Dokažimo =f([x]) = g(x)=; označimo =ξ = [x]=. Ker velja =x ∈ ξ= in =g(x) = g(x)=, je =f([x]) = g(x)=.
 
 * Kanonična razdelitev preslikave
 

@@ -3,8 +3,15 @@
 
 * Funkcijske relacije
 
-Za relacijo =R ⊆ A ⨯ B= pravimo, da je /funkcijska/, kadar je enolična in celovita.
+Za relacijo =R ⊆ A ⨯ B= pravimo, da je /funkcijska/, kadar je enolična in celovita. Taka funkcijska relacija ni nič drugega kot graf funkcije, ki jo opisuje.
 
 Funkcijske relacije so pravzaprav način kodiranja funkcij v množice; prirejanje funkcije =f: A → B= lahko zapišemo kot relacijo =R ⊆ A ⨯ B=, kjer velja =a R b ⇔ f(a) = b=. Enoličnost in celovitost relacije izhaja iz enoličnosti in celovitosti funkcije.
 
-Kompozitum funkcijskih relacij ustreza kompozitumu preslikav.
+Kompozitum funkcijskih relacij ustreza kompozitumu preslikav; naj bosta =f: A → B= in =g: B → C= preslikavi. Naj bo =F= graf funkcije =f= in =G= graf funkcije =g=. Velja
+#+begin_example
+                             x (G ∘ F) y
+                          ⇔ ∃ z ∈ B . x F z ∧ z G y
+                          ⇔ ∃ z ∈ B . z = f(x) ∧ y = g(z)
+                          ⇔ y = g(f(x))
+                          ⇔ y = (g ∘ f)(x)
+#+end_example

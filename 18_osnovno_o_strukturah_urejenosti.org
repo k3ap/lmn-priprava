@@ -3,10 +3,31 @@
 
 * Ureditev
 
-Naj bo =R ⊆ A ⨯ A= relacija.ž
+Naj bo =R ⊆ A ⨯ A= relacija.
 - =R= je /šibka ureditev/, če je refleksivna in tranzitivna
 - =R= je /delna ureditev/, če je šibka ureditev in antisimetrična
 - =R= je /linearna ureditev/, če je delna ureditev in sovisna
+  
+Delno in linearno ureditev lahko prikažemo s Hassejevim diagramom; pri tem je Hassejev diagram linearne ureditve navpičen.
+  
+** Veriga
+
+Naj bo =(P, R)= delna ureditev. Podmnožica =V= je /veriga/, če je z relacijo =R= linearno urejena.
+Podmnožica =A= je /antiveriga/, če je z relacijo =R= diskretno urejena; torej =∀ x,y ∈ A . x R y ⇒ x = y=.
+
+** Operacije na urejenostih
+
+Transpozicija delne urejenosti se imenuje /obratna urejenost/.
+
+Na kartezičnem produktu lahko definiramo produktno in leksikografsko urejenost; tu velja, da obe ohranjata delno urejenost, leksikografska urejenost pa ohranja tudi linearnost.
+
+Definiramo lahko tudi vsoto urejenosti in zaporedno vsoto.
+
+Na eksponentni množici =P^A= lahko definiramo potenčno urejenost, kjer velja =f ≤ g=, kadar velja =∀ x,y ∈ A . f(x) ≤ g(x)=.
+
+** Delna urejenost, inducirana s šibko urejenostjo
+
+Šibko urejeno množico =P= lahko razdelimo na ekvivalenčne razrede po ekvivalenčni relaciji =x ~ y ⇔ x ≤ y ∧ y ≤ x=; dobljena urejenost bo delna.
 
 * Meje
 
@@ -18,6 +39,25 @@ Naj bo =R= delna ureditev na =A= in =S ⊆ A=
   
 Podobno definiramo meje iz spodnje strani.
 
+Naj bo =(P, ≤)= delna urejenost. Tedaj ima največ en infimum in največ en supremum.
+
+* Mreže
+
+Naj bo =(P, ≤)= delna urejenost.
+- je /mreža/, kadar imata vsaka dva elementa infimum in supremum
+- je /omejena mreža/, kadar ima vsaka končna podmnožica infimum in supremum
+- je /polna mreža/, kadar ima vsaka podmnožica infimum in supremum
+  
+Infimum dveh elementov označimo z =x ∧ y=, supremum pa z =x ∨ y=.
+
+Delna omejenost je omejena mreža natanko tedaj, kot ima najmanjši element in največji element, ter imata vsaka dva elementa infimum in supremum.
+
+V levo smer je dokaz trivialen, v desno pa rekurziven:
+- infimum in supremmum prazne množice sta najmanjši in največji element
+- infimum in supremum neprazne množice dobimo tako, da izvzamemo en element in ga kombiniramo z infimumom oz. supremumom preostale množice; postopek se konča po končno mnogo korakih
+
 * Monotone preslikave
   
-Naj bo =(P, R)= delna urejenost in =f: P → B= preslikava. =f= je monotona, če velja =∀ x,y ∈ P. x R y ⇒ f(x) R f(y)=.
+Naj bo =(P, R)= delna urejenost in =f: P → B= preslikava. =f= je monotona, če velja =∀ x,y ∈ P. x R y ⇒ f(x) R f(y)=. Podobno definiramo antitono preslikavo.
+
+Očitno je identiteta monotona preslikava. Velja tudi, da je kompozicija monotonih preslikav monotona.
