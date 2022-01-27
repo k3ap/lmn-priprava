@@ -1,0 +1,30 @@
+#+TITLE: Moč množic
+#+AUTHOR: Patrik Žnidaršič
+
+* Končne množice
+
+Naj bo =n ∈ ℕ=. Definiramo /standardno končno množico/ =[n] = {k ∈ ℕ | k < n}= in njeno moč kot =n=.
+
+Naj bo =A= množica. =A= je končna, če obstaja naravno število =n=, za katerega velja, da je =A ≅ [n]=.
+
+Dodatno definiramo, da imata množici enako moč (sta /ekvipolentni/), če sta izomorfni.
+
+* Primerjava moči množic
+
+Naj bosta =A= in =B= množici. Velja:
+- =|A| ≤ |B| ⇔ obstaja injekcija A → B=
+- =|A| ≤ |B| ⇔ obstaja surjekcija B → A=
+  
+* Neskončne množice
+  
+Množica =A= je neskončna, kadar ni končna. Niso pa vse neskončne množice ekvipolentne; kar sledi iz Cantorjevega izreka.
+
+Zaradi tega je smiselno definirati kardinalna števila:
+- alef 0: to so kar naravna števila
+- alef 1: 2^(alef 0) = P(alef 0)
+- itn.
+  
+* Cantor-Schröder-Bernsteinov izrek
+
+Naj bosta =A= in =B= množici.
+                      =|A| = |B| ⇔ |A| ≤ |B| ∧ |B| ≤ |A|=

@@ -1,0 +1,38 @@
+#+TITLE: Indukcija in dobre ureditve
+#+AUTHOR: Patrik Žnidaršič
+
+* Indukcija na naravnih številih
+  
+Princip indukcije na naravnih številih pravi, da če neka lastnost velja za 0, in če iz predpostavke, da lastnost velja za =n=, lahko dokažemo, da velja tudi za =n+1=, potem lastnost velja za vsa naravna števila. Princip lahko posplošimo, tako da predpostavimo, da lastnost velja za vsa števila, manjša ali enaka =n=.
+
+* Stroga ureditev
+
+Preden lahko posplošimo princip indukcije na druge množice, potrebujemo definicijo stroge ureditve:
+
+Relacija =<= na =A= je stroga ureditev, če velja:
+- =<= je irefleksivna
+- =<= je tranzitivna
+  
+Če je poleg tega še sovisna, pravimo, da je strogo linearna ureditev.
+
+* Indukcija
+
+Naj bo =R= relacija na =A=. Podmnožica =S ⊆ A= je /progresivna množica/, če velja:
+                 =∀ y ∈ A . (∀ x ∈ A . x R y ⇒ x ∈ S) ⇒ y ∈ S=
+                 
+Torej če lahko iz dejstva, da so vsi manjši elementi od nekega elementa v =S=, sklepamo, da je tudi ta element v =S=.
+
+** Dobra osnovanost
+
+Relacija =R= na =A= je /dobro osnovana/, kadar je edina =R=-progresivna množica v =A= kar =A= sam;
+                      =∀ S ∈ P(A) . S progrsivna ⇒ S = A=
+                      
+
+** Dobra urejenost
+
+Relacija =R= na =A= je /dobra urejenost/, ko velja:
+- =R= je dobro osnovana
+- =R= je strogo linearna
+
+Dobro urejenost lahko karakteriziramo s pomočjo naslednjega izreka:
+              V dobri urejenosti ni ciklov in ni padajočih verig.

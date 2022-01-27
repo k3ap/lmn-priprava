@@ -1,0 +1,12 @@
+#+TITLE: Števne in neštevne množice
+#+AUTHOR: Patrik Žnidaršič
+
+* Števne množice
+
+Množica =A= je števna, če je končna ali ekvipolentna naravnim številom.
+
+Povedano drugače, =A= je števna, če obstaja injekcija =A → ℕ=.
+
+* Neštevne množice
+
+Množica =A= je neštevna, če ni števna; oz. če velja =|ℕ| < |A|=
