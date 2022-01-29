@@ -1,0 +1,49 @@
+#+TITLE: Aksiomi teorije množic
+#+AUTHOR: Patrik Žnidaršič
+
+* Zermelo-Fraenkolovi aksiomi
+
+** Ekstenzionalnost
+
+Množici, ki imata enake elemente, sta enaki.
+
+** Neurejeni par
+
+Za vsaki množici =x,y= je ={x,y}= množica. Velja =z ∈ {x,y} ⇔ z = x ∨ z = y=.
+Uvedemo okrajšavo: ={x} = {x,x}=
+
+** Unija
+
+Za vsako množico =A= je =U A= množica in velja =z ∈ U A ⇔ ∃ B ∈ A . z ∈ B=.
+
+** Prazna množica
+
+=∅= je množica in =z ∈ ∅ ⇔ ⊥=.
+
+** Neskončna množica
+
+Obstaja množica =S=, ki zadošča pogoju =∅ ∈ S ∧ ∀ x ∈ S . x+ ∈ S=.
+
+(kjer je =x+ = {x} U x=)
+
+** Podmnožica
+   
+Če je =S= množica in =ϕ(x)= predikat na =S=, potem je =S' = {x ∈ S | ϕ(x)}= množica in velja =z ∈ S' ⇔ z ∈ S ∧ ϕ(z)=.
+
+** Potenčna množica
+
+Če je =S= množica, potem je =P(S)= množica in velja =x ∈ P(S) ⇔ x ⊆ S=.
+
+** Aksiom o zamenjavi
+
+Slika funkcije =I → Set=, kjer je =I= množica, je množica.
+
+** Dobra osnovanost
+
+Relacija =∈= je dobro osnovana.
+
+To pomeni, da ne obstaja množica, ki bi bila element same sebe.
+
+** Aksiom izbire
+   
+Družina nepraznih množic ima funkcijo izbire.

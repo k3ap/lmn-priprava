@@ -1,0 +1,35 @@
+#+TITLE: Kumulativna hierarhija
+#+AUTHOR: Patrik Žnidaršič
+
+* Kodiranje
+
+Vse matematične objekte lahko kodiramo z množicami:
+- funkcije lahko kodiramo z funkcijskimi relacijami
+- urejen par =(x,y)= lahko kodiramo kot ={{x}, {x,y}}=
+- naravna števila lahko kodiramo kot množice:
+  - =0= zakodiramo kot prazno množico
+  - če poznamo kodiranje za =n=, število =n+1= zakodiramo kot =n U {n}=
+
+* Ordinalna števila
+  
+Dobri ureditvi =(P, ≤)= in =(Q, ≤)= sta izomorfni, če obstajata monotoni preslikavi =f: P → Q= in =g: Q → P=, da velja =f ∘ g = id= in =g ∘ f = id=.
+Izomorfnost dobrih urejenosti je seveda ekvivalenčna relacija, zato je smiselno imeti izbor predstavnikov zanjo. Tem predstavnikom rečemo /ordinalna števila/. Po von Neumannovi ideji je ordinalno število množica vseh svojih predhodnikov, urejeno z relacijo =∈=.
+- končna ordinalna števila sovpadajo z naravnimi števili
+- množica vseh končnih ordinalnih števil je prvo neskončno ordinalno število, označimo ga z =ω=.
+  - sledijo mu števila =ω+1, ω+2, ..., ω+ω, ...=
+    
+Ordinalna števila lahko opredelimo tudi bolj formalno.
+
+Množica =S= je tranzitivna, če iz sklepa =A ∈ B= in =B ∈ S= sledi =A ∈ S=.
+Ordinal je torej tranzitivna množica, ki je z relacijo =∈= dobro urejena.
+
+* Kumulativna hierarhija
+
+Kako si predstavljamo razred vseh množic?
+
+Gradimo ga po stopnjah, te pa oštevilčimo z ordinalnimi števili. Prvo so na vrsti hereditarno končne množice, potem množica vseh hereditarno končnih pri prvem limitnem ordinalu, itn.
+
+V splošnem lahko to zapišemo s formulo:
+- =V_ɑ+1 = P(V_ɑ)=
+- =V_ϐ = U_{ɑ < ϐ} V_ɑ=; če je =ϐ= limitni ordinal; tu potrebujemo aksiom o zamenjavi
+- =Set = U_{ɑ ∈ On} V_ɑ=

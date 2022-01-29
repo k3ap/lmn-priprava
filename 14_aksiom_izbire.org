@@ -10,3 +10,35 @@ Naslednje trditve so ekvivalentne:
 4. Produkt družine nepraznih množic je neprazen
    
 Običajno vzamemo 3. trditev kot aksiom izbire.
+
+** Verige
+
+Veriga v delni urejenosti =(P, ≤)= je taka podmnožica =V=, ki je z =≤= linearno urejena.
+
+** Zornova lema
+
+Če ima v delni urejenosti =(P, ≤)= vsaka veriga zgornjo mejo, potem ima =P= maksimalni element.
+
+Dokaz Zornove leme se nanaša na Bourbaki-Wittov izrek:
+Naj bo =(P, ≤)= neprazna delna ureditev, v kateri ima vsaka veriga zgornjo mejo in =f: P → P= progresivna preslikava (=∀ x ∈ P . x ≤ f(x)=). Tedaj ima =f= negibno točko: to je tak =x=, da velja =f(x) = x=.
+
+Sedaj dokažimo Zornovo lemo:
+Naj bo =C= množica vseh verig v =P=. Uredimo jo s =⊆=. Na njej definiramo =f: C → C=, ki verigo razširi, če ni maksimalna, sicer pa jo pusti na miru;
+- če je =V= maksimalna veriga, je =f(V) = V=
+- če =V= ni maksimalna veriga, izberemo =x ∈ P\V=, da je =f(V) = V U {x}= veriga
+  
+Po Bourbaki-Wittovem izreku ima =f= negibno vrednost =V=. Očitno mora biti =V= maksimalna veriga. Naj bo =m= zgornja meja za =V=. Trdimo, da je =m= maksimalni element za =P=.
+Recimo, da velja =m ≤ y= za nek =y ∈ P=. Tedaj je =V U {y}= veriga; a =V= je že maksimalna, torej mora veljati =y=m=. Torej je =m= maksimalni element.
+
+
+V teoriji množic brez aksioma izbire so naslednje izjave ekvivalentne:
+- aksiom izbire
+- Zornova lema
+- vsaka množica ima dobro ureditev (/princip dobre urejenosti/)
+  
+** Ostale posledice
+
+Z aksiomom izbire lahko dokažemo, da ima vsak vektorski prostor bazo.
+Naj bo =V= vektorski prostor. Naj bo =P = {W ⊆ V | W je linearno neodvisna}=.
+Množico =P= delno uredimo z relacijo podmnožica. Maksimalni element verige je kar njena unija.
+Po Zornovi lemi obstaja maksimalni element v =P=, torej maksimalna linearno neodvisna množica =B= v =V=. To je baza prostora.
