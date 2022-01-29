@@ -9,22 +9,61 @@ Naj bo =A= množica. =A= je končna, če obstaja naravno število =n=, za katere
 
 Dodatno definiramo, da imata množici enako moč (sta /ekvipolentni/), če sta izomorfni.
 
-* Primerjava moči množic
-
-Naj bosta =A= in =B= množici. Velja:
-- =|A| ≤ |B| ⇔ obstaja injekcija A → B=
-- =|A| ≤ |B| ⇔ obstaja surjekcija B → A=
   
 * Neskončne množice
   
 Množica =A= je neskončna, kadar ni končna. Niso pa vse neskončne množice ekvipolentne; kar sledi iz Cantorjevega izreka.
+  
+Velja: Množica =A= je neskončna natanko tedaj, ko obstaja injektivna preslikava =ℕ → A=.
 
-Zaradi tega je smiselno definirati kardinalna števila:
-- alef 0: to so kar naravna števila
-- alef 1: 2^(alef 0) = P(alef 0)
-- itn.
+Injekcijo bomo podali s pomočjo aksioma odvisne izbire. Ker =A= ni izomorfna =[0]=, obstaja =a(0) ∈ A=. Sedaj definiramo člen =a(i+1)= pod predpostavko, da smo definirali že člene do =i=; ker =A= ni izomorfna =[i]=, množica =A \ {a(j) | j ≤ i}= ni izomorfna =[0]=; torej obstaja =a(i+1)= element nje.
+
+Če bi obstajala injekcija =ℕ → A=, =A= pa bi bila končna, torej izomorfna =[n]=, bi obstajala tudi injekcija =ℕ → [n]=; kar je nesmisel.
+
+Ker je izomorfnost (ekvipolentnost) ekvivalenčna relacija, je smiselno definirati ekvivalenčne razrede; to pa je nerodno, ker so ti razredi pravi. Zato namesto z njimi delamo z njihovimi predstavniki: kardinalnimi števili.
+
+Vse standardne končne množice so kardinalna števila. Poleg tega je množica naravnih števil kardinal, ki ga označimo z alef 0. Iz Cantorjevega izreka sledi, da je potenčna množica neke množice strogo večja od množice same; torej je smiselno definirati alef(n+1) kot potenčno množico alef(n).
+
+** Primerjava moči množic
+
+Naj bosta =A= in =B= množici. Velja:
+- =|A| ≤ |B| ⇔ obstaja injekcija A → B=
+- =|A| ≤ |B| ⇔ obstaja surjekcija B → A ∨ A = ∅=
   
 * Cantor-Schröder-Bernsteinov izrek
 
 Naj bosta =A= in =B= množici.
                       =|A| = |B| ⇔ |A| ≤ |B| ∧ |B| ≤ |A|=
+
+** Dokaz
+
+Naj bosta =f: A → B= in =g: B → A= injekciji.
+Naj bo =C : ℕ → Set= družina množic, definirana kot:
+- =C_0 = A \ g_*(B)=
+- =C_n+1 = g_*(f_*(C_n))=
+  
+In naj bo =D = U_n C_n=. Očitno velja =D ⊆ A=. Ker je =g= inkecija, obstaja inverz =g' : g_*(B) → B=.
+
+Trdimo =A\D ⊆ g_*(B)=. Če velja =x ∈ A\D=, velja =x ∉ D= in =x ∉ C_0 = A\g_*(B)=, torej =x ∈ g_*(B)=. Torej lahko =g'= uporabimo na =A\D=.
+
+Definiramo =h: A → B= s predpisom:
+- =h(x) = f(x), če x ∈ D=
+- =h(x) = g'(x), če x ∉ D=
+
+Dokažimo, da je =h= injektivna: Naj bosta =x,y ∈ A= in naj velja =h(x) = h(y)=
+1. če =x,y ∈ D=, potem =f(x) = f(y)= in =x=y= iz injektivnosti =f=
+2. če =x,y ∉ D=, potem =g'(x) = g'(y)= in =x=y= iz injektivnosti =g'=
+3. če =x ∈ D= in =y ∉ D=, potem =f(x) = g'(y)=; torej je =y = g(f(x))=, ker je =g'= inverz =g=.
+   Tedaj obstaja =n ∈ ℕ=, da je =x ∈ C_n=. Velja =y ∈ g_*(f_*(C_n)) = C_n+1=, kar je protislovje
+4. če =y ∈ D= in =x ∉ D=, je razmislek podoben kot v prejšnjem primeru
+   
+Dokažimo, da je =h= surjektivna: naj bo =z ∈ B=.
+1. če =z ∈ f_*(D)=, potem obstaja =x ∈ D=, da je =f(x) = z=; torej =h(x) = z=.
+2. če =z ∉ f_*(D)=, potem podamo =x = g(z)=. Preverimo =h(x) = z=;
+   ker =z ∉ f_*(D)=, velja =x ∉ g_*(f_*(D))=, torej ne obstaja =n ∈ ℕ=, da bi veljalo =x ∈ C_n=. Iz tega sledi =x ∉ D=, torej =h(x) = g'(x)=. Velja =x = g(z)=, torej =h(x) = g'(g(z)) = z=.
+
+* Cantorjeva hipoteza
+
+Vsaka neštevna podmnožica realnih števil je izomorfna realnim številom.
+
+Izkaže se naslednje: Iz Zermelo-Fraenkolovih aksiomov teorije množic Cantorjeve hipoteze ne moramo niti dokazati niti ovreči.

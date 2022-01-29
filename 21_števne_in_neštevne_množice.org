@@ -3,9 +3,16 @@
 
 * Števne množice
 
-Množica =A= je števna, če je končna ali ekvipolentna naravnim številom.
+Množica =A= je števna, če je končna ali ekvipolentna naravnim številom; povedano malo drugače, če velja =|A| ≤ ℵ_0=.
 
-Povedano drugače, =A= je števna, če obstaja injekcija =A → ℕ=.
+Za vsako množico =A= so ekvivalentne naslednje izjave:
+- =A= je števna
+- obstaja injekcija =A → ℕ=
+- =A= je prazna ali obstaja surjekcija =ℕ → A=
+- obstaja surjekcija =ℕ → 1 + A=
+  
+Števna družina =A: I → Set= je družina, katere indeksna množica =I= je števna.
+Unija števne družine števnih množic je števna.
 
 * Neštevne množice
 

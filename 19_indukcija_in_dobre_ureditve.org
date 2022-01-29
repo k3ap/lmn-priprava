@@ -5,6 +5,9 @@
   
 Princip indukcije na naravnih številih pravi, da če neka lastnost velja za 0, in če iz predpostavke, da lastnost velja za =n=, lahko dokažemo, da velja tudi za =n+1=, potem lastnost velja za vsa naravna števila. Princip lahko posplošimo, tako da predpostavimo, da lastnost velja za vsa števila, manjša ali enaka =n=.
 
+Indukcijo na naravnih številih lahko izrazimo tudi brez operacije naslednjik; ta princip, ki uporablja realcijo =<=, imenujemo /krepka indukcija/:
+      =∀ S ∈ P(ℕ) . (∀ m ∈ ℕ . (∀ k ∈ ℕ . k < m ⇒ k ∈ S) ⇒ m ∈ S) ⇒ S = ℕ=
+
 * Stroga ureditev
 
 Preden lahko posplošimo princip indukcije na druge množice, potrebujemo definicijo stroge ureditve:
@@ -25,14 +28,63 @@ Torej če lahko iz dejstva, da so vsi manjši elementi od nekega elementa v =S=,
 ** Dobra osnovanost
 
 Relacija =R= na =A= je /dobro osnovana/, kadar je edina =R=-progresivna množica v =A= kar =A= sam;
-                      =∀ S ∈ P(A) . S progrsivna ⇒ S = A=
+                      =∀ S ∈ P(A) . S progresivna ⇒ S = A=
                       
+
+** Padajoče verige
+
+Naj bo =R ⊆ A ⨯ A= relacija. /Padajoča veriga/ je zaporedje =a : ℕ → A=, za katerega velja =∀ i ∈ ℕ . a(i+1) R a(i)=.
+
+Cikel je končna podmnožica ={a_0, a_1, ..., a_n} ⊆ A=, da velja =a_0 R a_1, a_1 R a_2, ..., a_n R a_0=.
+
+V dobri osnovanosti ni ciklov in ni padajočih verig; dovolj je pokazati, da ni padajočih verig.
+Recimo, da imamo padajočo verigo =a : ℕ → A=. Dokažimo, da =R= ni dobro osnovana; to storimo tako, da najdemo =R=-progresivno podmnožico =A=, ki ni enaka =A=. Dokažimo, da je =S = A \ {a(i) | i ∈ ℕ}= taka;
+
+Naj bo =y ∈ A=. Predpostavimo =∀ x ∈ A . x R y ⇒ x ∈ S=.
+Dokažimo =y ∈ S=. Če bi veljalo =y ∉ S=, bi obstajal =i ∈ ℕ=, da =y = a(i)=. Tedaj velja =a(i+1) R y=, torej po predpostavki =a(i+1) ∈ S=. Ampak po konstrukciji =S= je to protislovje.
+
+** Aksiom odvisne izbire
+
+Naj bo =A= neprazna množica in =R= celivota relacija na =A=. Tedaj obstaja tako zaporedje =a: ℕ → A=, da za vse =n ∈ ℕ= velja =a_n R a_n+1=.
 
 ** Dobra urejenost
 
 Relacija =R= na =A= je /dobra urejenost/, ko velja:
 - =R= je dobro osnovana
 - =R= je strogo linearna
+  
+Relacija je dobra ureditev natanko tedaj, ko je dobro osnovana in sovisna.
+V desno smer je trditev očitna. Dokažimo še v levo; dokazati moramo, da je dobro osnovana sovisna relacija strogo linearna ureditev.
+- irefleksivnost: če bi obstajal =x ∈ A=, da velja =x R x=, potem obstaja padajoča veriga, in =R= ni dobro osnovana
+- tranzitivnost: Naj bodo =a, b, c ∈ A=. Predpostavimo =a R b ∧ b R c=. Ker je sovisna, velja =a R c= ali =c R a=. Če bi veljalo =c R A=, bi imeli cikel; kar v dobri osnovanosti ni mogoče. Torej velja =a R c=
+- sovisna: v predpostavki
+  
+Naj bo =<= stroga urejenost na =A=. Če =A= nima =≤=-minimalnega elementa, potem ima padajočo verigo.
+Da =A= nima minimalnega elementa, pomeni =∀ x ∈ A . ∃ y ∈ A . y ≤ x ∧ y ≠ x=, kar je ekvivalentno =∀ x ∈ A . ∃ y ∈ A . y < x=. Padajočo verigo bomo definirali z zaporedjem izbir; (predpostavimo /aksiom odvisne izbire/)
+Naj bo =a(0) ∈ A=. Za vsak =i ∈ ℕ \ {0}= tedaj definiramo člen =a(i)=, za katerega velja =a(i) < a(i-1)=; vemo, da tak =a(i) ∈ A= obstaja. To je ravno padajoča veriga.
 
-Dobro urejenost lahko karakteriziramo s pomočjo naslednjega izreka:
-              V dobri urejenosti ni ciklov in ni padajočih verig.
+Naj bo =<= relacija na =A=. Naslednje trditve so ekvivalentne:
+- =<= je dobro osnovana
+- Vsaka neprazna podmnožica =A= ima =≤=-minimalni element
+- =A= nima =<=-padajoče verige
+  
+Naj bo =S= neprazna podmnožica =A=. Z uporabo dobre osnovanosti na =A\S= dobimo naslednjo verigo ekvivalenc:
+#+begin_example
+(∀ y ∈ A . (∀ x ∈ A . x < y ⇒ x ∈ A\S) ⇒ y ∈ A\S) ⇒ A\S = A
+(∀ y ∈ A . (∀ x ∈ A . x < y ⇒ x ∈ A\S) ⇒ y ∈ A\S) ⇒ ⊥
+¬(∀ y ∈ A . (∀ x ∈ A . x < y ⇒ x ∈ A\S) ⇒ y ∈ A\S)
+∃ y ∈ A . (∀ x ∈ A . x < y ⇒ x ∈ A\S) ∧ y ∉ A\S
+∃ y ∈ A . (∀ x ∈ A . x < y ⇒ x ∉ S) ∧ y ∈ S
+∃ y ∈ S . ∀ x ∈ A . x < y ⇒ x ∉ S
+#+end_example
+
+Torej ima vsaka neprazna podmnožica =S= minimalni element.
+
+Za drugo implikacijo le uporabimo prejšnjo lemo.
+
+Naj bo =S= progresivna podmnožica =A=. Trdimo, da =C = A\S= nima minimalnega elementa. Če bi bil =c ∈ C= minimalni, bi veljajo =∀ x ∈ A . x < c ⇒ x ∈ S=; ker je =S= progresivna, sledi =c ∈ S=, kar je protislovje. Če bi bila =C= neprazna, bi po prejšnji lemi lahko našli padajočo verigo, kar je v protislovju s predpostavko implikacije. Torej mora biti =C= prazna.
+
+Naj bo =<= stroga urejenost na =A=. Tedaj so ekvivalentne izjave:
+- =<= je dobro urejena
+- vsaka neprazna podmnožica =A= ima =<=-prvi element
+- =A= nima =<=-padajoče verige in =<= je sovisna
