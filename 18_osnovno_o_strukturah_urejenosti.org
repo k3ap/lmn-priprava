@@ -50,7 +50,7 @@ Naj bo =(P, ≤)= delna urejenost.
   
 Infimum dveh elementov označimo z =x ∧ y=, supremum pa z =x ∨ y=.
 
-Delna omejenost je omejena mreža natanko tedaj, kot ima najmanjši element in največji element, ter imata vsaka dva elementa infimum in supremum.
+Delna urejenost je omejena mreža natanko tedaj, kot ima najmanjši element in največji element, ter imata vsaka dva elementa infimum in supremum.
 
 V levo smer je dokaz trivialen, v desno pa rekurziven:
 - infimum in supremmum prazne množice sta najmanjši in največji element
