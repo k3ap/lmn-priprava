@@ -41,7 +41,7 @@ Naj bo =E= ekvivalenčna relacija na =A=. Množico =C ⊆ A=, ki vsak ekvivalen�
 Pravzaprav vsak prerez =s: A/E → A= kvocientne preslikave določa izbor predstavnikov s svojo sliko;
 Naj bo =y ∈ s_*(A/E)=. Tedaj je =y ∈ [y]=. Naj bo =[x] ∈ A/E=. Vemo =[x] = q(s([x]))=, iz česar sledi =[x] = [s([x])]=; torej se sekata.
 
-* Univeerzalna lastnost kvocientne množice
+* Univerzalna lastnost kvocientne množice
 
 Naj bo =E= ekvivalenčna relacija na =A= in =g: A → B= preslikava, skladna z =E=. Tedaj obstaja natanko ena preslikava =f: A/E → B=, da je =f([x]) = g(x)= za vse =x ∈ A= (=f ∘ q = g=).
 
